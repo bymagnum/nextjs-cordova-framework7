@@ -1,4 +1,3 @@
-var fs = require("fs");
 var fse = require("fs-extra");
 var path = require('path');
 
@@ -21,6 +20,14 @@ async function CreateApp () {
         fse.copySync('dist/template/next.config.js', 'next.config.js');
     }
  
+    if (fs.existsSync('dist/template/.env.development')) {
+        fse.copySync('dist/template/.env.development', '.env.development');
+    }
+
+    if (fs.existsSync('dist/template/.env.production')) {
+        fse.copySync('dist/template/.env.production', '.env.production');
+    }
+
 }
 
 CreateApp();
