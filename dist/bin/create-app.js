@@ -7,12 +7,24 @@ async function CreateApp () {
 
     if (fs.existsSync('dist/template/www')) {
         fse.copySync('dist/template/www', 'www');
+    }
+
+    if (fs.existsSync('dist/template/pages')) {
         fse.copySync('dist/template/pages', 'pages');
     }
 
+    if (fs.existsSync('dist/template/config.xml')) {
+        fse.copySync('dist/template/config.xml', 'config.xml');
+    }
 
-
+    if (fs.existsSync('dist/template/next.config.js')) {
+        fse.copySync('dist/template/next.config.js', 'next.config.js');
+    }
+ 
     
+
+
+
 }
 
 CreateApp();
