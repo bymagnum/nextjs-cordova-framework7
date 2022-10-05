@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-cordova-framework7",
+  "version": "0.0.1",
+  "description": "Launch the cordova app with nextjs and framework7!",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:bymagnum/nextjs-cordova-framework7.git"
+  },
+  "keywords": [
+    "nextjs",
+    "framework7",
+    "cordova"
+  ],
+  "bin": {
+    "bmg": "index.js"
+  },
+  "author": "bymagnum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bymagnum/nextjs-cordova-framework7/issues"
+  },
+  "homepage": "https://github.com/bymagnum/nextjs-cordova-framework7#readme"
+}
