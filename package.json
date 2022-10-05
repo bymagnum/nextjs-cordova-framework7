@@ -5,9 +5,9 @@
   "description": "Launch the cordova app with nextjs and framework7!",
   "main": "index.js",
   "scripts": {
-    "create-app": "node dist/bin/create-app.js",
+    "app:create": "node dist/bin/create-app.js",
     "dev": "next dev -p 9090",
-    "build:app": "next-cordova-static"
+    "app:build": "next-cordova-static"
   },
   "repository": {
     "type": "git",
