@@ -5,8 +5,8 @@ var path = require('path');
 
 async function CreateApp () {
 
-    if (fs.existsSync('dist/template/www')) {
-        fse.copySync('dist/template/www', 'www');
+    if (fs.existsSync('dist/template/components')) {
+        fse.copySync('dist/template/components', 'components');
     }
 
     if (fs.existsSync('dist/template/pages')) {
@@ -21,10 +21,6 @@ async function CreateApp () {
         fse.copySync('dist/template/next.config.js', 'next.config.js');
     }
  
-    
-
-
-
 }
 
 CreateApp();

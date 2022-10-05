@@ -7,7 +7,7 @@
   "scripts": {
     "app:create": "node dist/bin/create-app.js",
     "dev": "next dev -p 9090",
-    "app:build": "next-cordova-static"
+    "app:build": "next build && next export -o www && next-cordova-static"
   },
   "repository": {
     "type": "git",
