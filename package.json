@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "Launch the cordova app with nextjs and framework7!",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:bymagnum/nextjs-cordova-framework7.git"
@@ -15,12 +14,22 @@
     "cordova"
   ],
   "bin": {
-    "bmg": "index.js"
+    "create-app": "index.js"
   },
   "author": "bymagnum",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bymagnum/nextjs-cordova-framework7/issues"
   },
-  "homepage": "https://github.com/bymagnum/nextjs-cordova-framework7#readme"
+  "homepage": "https://github.com/bymagnum/nextjs-cordova-framework7#readme",
+  "dependencies": {
+    "cordova": "^11.0.0",
+    "framework7": "^7.0.8",
+    "framework7-react": "^7.0.8",
+    "next": "^12.3.1",
+    "next-cordova-static": "^1.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "shelljs": "^0.8.5"
+  }
 }
