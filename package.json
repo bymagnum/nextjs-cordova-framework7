@@ -7,7 +7,7 @@
   "scripts": {
     "app:create": "node dist/bin/create-app.js",
     "dev": "next dev -p 9090",
-    "app:build": "next build && next export -o www && next-cordova-static"
+    "app:build": "next build && next export && next-cordova-static"
   },
   "repository": {
     "type": "git",
@@ -38,5 +38,8 @@
   },
   "cordova": {
     "platforms": []
+  },
+  "devDependencies": {
+    "cordova-android": "^10.1.2"
   }
 }
