@@ -1,4 +1,4 @@
-# Nextjs + Cordova Framework7
+# Nextjs + Cordova + Framework7
 
 Use this package if you want to customize an application running NexJS, Cordova, Framework7
 
@@ -70,6 +70,8 @@ cordova run android
 </pre>
 
 
-Versions:
+# Versions:
+
+0.0.2 - Minor fixes
 
 0.0.1 - Create app
