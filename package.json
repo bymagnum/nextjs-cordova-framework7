@@ -1,13 +1,15 @@
 {
   "name": "nextjs-cordova-framework7",
   "displayName": "HelloCordova",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Launch the cordova app with nextjs and framework7!",
   "main": "index.js",
   "scripts": {
-    "app:create": "node dist/bin/create-app.js",
-    "app:build": "next-cordova-static",
-    "dev": "next dev -p 9090"
+    "app-create": "node dist/bin/create-app.js",
+    "app-build": "next-cordova-static",
+    "dev": "next dev -p 9090",
+    "build": "next build",
+    "export": "next export"
   },
   "repository": {
     "type": "git",

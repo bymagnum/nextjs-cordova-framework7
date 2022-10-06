@@ -72,6 +72,8 @@ cordova run android
 
 # Versions:
 
+0.0.3 - Add build && export
+
 0.0.2 - Minor fixes
 
 0.0.1 - Create app
