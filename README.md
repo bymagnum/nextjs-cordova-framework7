@@ -2,16 +2,11 @@
 
 Use this package if you want to customize an application running NexJS, Cordova, Framework7
 
-This package uses [next-cordova-static](https://github.com/bymagnum/next-cordova-static)
+This package uses [next-cordova-static](https://www.npmjs.com/package/next-cordova-static)
 
-# Install this package 
+# Install 
 <pre>
-npm install nextjs-cordova-framework7
-</pre>
-
-Or:
-<pre>
-yarn add nextjs-cordova-framework7
+git clone https://github.com/bymagnum/nextjs-cordova-framework7.git .
 </pre>
 
 # Steps required
@@ -71,6 +66,7 @@ cordova run android
 
 
 # Versions:
+0.0.4 - Minor fixes 
 
 0.0.3 - Add build && export
 
