@@ -1,9 +1,7 @@
 {
   "name": "nextjs-cordova-framework7",
-  "displayName": "HelloCordova",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Launch the cordova app with nextjs and framework7!",
-  "preferGlobal": true,
   "bin": {
     "create-ncf-app": "./dist/bin/create-app"
   },
