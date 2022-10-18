@@ -1,39 +1,47 @@
 #! /usr/bin/env node
-var shell = require("shelljs");
-var fse = require("fs-extra");
+var shell = require('shelljs');
+var fse = require('fs-extra');
 var path = require('path');
 
 
 async function CreateApp () {
 
-    if (fse.existsSync('dist/template/components')) {
-        fse.copySync('dist/template/components', 'components');
+    const ROOT_DIR = path.join(path.dirname(__dirname), 'template/');
+
+    if (fse.existsSync(ROOT_DIR + 'components')) {
+        fse.copySync(ROOT_DIR + 'components', 'components');
     }
 
-    if (fse.existsSync('dist/template/pages')) {
-        fse.copySync('dist/template/pages', 'pages');
+    if (fse.existsSync(ROOT_DIR + 'pages')) {
+        fse.copySync(ROOT_DIR + 'pages', 'pages');
     }
 
-    if (fse.existsSync('dist/template/config.xml')) {
-        fse.copySync('dist/template/config.xml', 'config.xml');
+    if (fse.existsSync(ROOT_DIR + 'config.xml')) {
+        fse.copySync(ROOT_DIR + 'config.xml', 'config.xml');
     }
 
-    if (fse.existsSync('dist/template/next.config.js')) {
-        fse.copySync('dist/template/next.config.js', 'next.config.js');
+    if (fse.existsSync(ROOT_DIR + 'next.config.js')) {
+        fse.copySync(ROOT_DIR + 'next.config.js', 'next.config.js');
     }
  
-    if (fse.existsSync('dist/template/.env.development')) {
-        fse.copySync('dist/template/.env.development', '.env.development');
+    if (fse.existsSync(ROOT_DIR + '.env.development')) {
+        fse.copySync(ROOT_DIR + '.env.development', '.env.development');
     }
 
-    if (fse.existsSync('dist/template/.env.production')) {
-        fse.copySync('dist/template/.env.production', '.env.production');
+    if (fse.existsSync(ROOT_DIR + '.env.production')) {
+        fse.copySync(ROOT_DIR + '.env.production', '.env.production');
     }
 
-    if (fse.existsSync('dist/template/package.json')) {
-        fse.copySync('dist/template/package.json', 'package.json');
+    if (fse.existsSync(ROOT_DIR + 'package.json')) {
+        fse.copySync(ROOT_DIR + 'package.json', 'package.json');
     }
 
+    if (fse.existsSync(ROOT_DIR + '.gitignore')) {
+        fse.copySync(ROOT_DIR + '.gitignore', '.gitignore');
+    }
+
+    shell.exec("npm install");
+    
 }
 
 CreateApp();
