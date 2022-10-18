@@ -36,8 +36,8 @@ async function CreateApp () {
         fse.copySync(ROOT_DIR + 'package.json', 'package.json');
     }
 
-    if (fse.existsSync(ROOT_DIR + '.gitignore')) {
-        fse.copySync(ROOT_DIR + '.gitignore', '.gitignore');
+    if (fse.existsSync(ROOT_DIR + 'gitignore')) {
+        fse.copySync(ROOT_DIR + 'gitignore', '.gitignore');
     }
 
     shell.exec("npm install");
