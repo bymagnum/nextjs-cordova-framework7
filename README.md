@@ -67,6 +67,8 @@ cordova run android
 
 # Versions:
 
+0.1.1 - Public folder added
+
 0.0.9 - Added a test catalog template
 
 0.0.7 - Add "create-ncf-app"

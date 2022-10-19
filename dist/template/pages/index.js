@@ -19,9 +19,9 @@ function IndexPage() {
         >
             <Block>
                 <p>Here comes main view page text</p>
-                <p>/dr/s/asr.html: <Link href="/dr/s/asr.html">click</Link></p>
-                <p>/abc/p.html: <Link href="/abc/p.html">click</Link></p>
-                <p>/about.html: <Link href="/about.html">click</Link></p>
+                <p>/test/dr/s/asr.html: <Link href="/test/dr/s/asr.html">click</Link></p>
+                <p>/test/abc/p.html: <Link href="/test/abc/p.html">click</Link></p>
+                <p>/test/about.html: <Link href="/test/about.html">click</Link></p>
             </Block>
         </Page>
     </>;

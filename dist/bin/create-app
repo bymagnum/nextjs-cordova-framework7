@@ -16,6 +16,10 @@ async function CreateApp () {
         fse.copySync(ROOT_DIR + 'pages', 'pages');
     }
 
+    if (fse.existsSync(ROOT_DIR + 'public')) {
+        fse.copySync(ROOT_DIR + 'public', 'public');
+    }
+
     if (fse.existsSync(ROOT_DIR + 'config.xml')) {
         fse.copySync(ROOT_DIR + 'config.xml', 'config.xml');
     }
