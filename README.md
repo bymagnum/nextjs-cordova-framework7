@@ -25,10 +25,12 @@ npm run app-build
 </pre>
 
 
+# Developing an application
 Developing an application on port 9090 (change if necessary)
 <pre>
 npm run dev
 </pre>
+
 
 # General information
 
@@ -48,10 +50,10 @@ Everything else - You can use it as if you used cordova, nextjs, framework 7 sep
 
 # Example
 
-An example of working on an application after you have created an application with the "app:create" command:
+An example of working on an application after you have created an application with the "create-ncf-app" command:
 
 <pre>
-npm run app:build
+npm run app-build
 </pre>
 
 <pre>
@@ -64,6 +66,8 @@ cordova run android
 
 
 # Versions:
+
+0.0.9 - Added a test catalog template
 
 0.0.7 - Add "create-ncf-app"
 
