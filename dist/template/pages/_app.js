@@ -1,5 +1,5 @@
 import Framework7 from 'framework7/bundle';
-import Framework7React, { App, View } from 'framework7-react';
+import Framework7React, { f7ready, App, View } from 'framework7-react';
 Framework7.use(Framework7React);
 import '../node_modules/framework7/framework7-bundle.min.css';
 import '../public/static/css/main.css';
@@ -7,7 +7,7 @@ import PanelLeft from '../components/PanelLeft.js';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Routes from '../components/Routes';
-
+import { useEffect, useState } from 'react';
 
 function CordovaApp({ Component, pageProps }) {
 
