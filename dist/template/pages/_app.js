@@ -13,6 +13,7 @@ function CordovaApp({ Component, pageProps }) {
 
     const router = useRouter();
     const [app, setApp] = useState(null);
+    const [isDeviceready, setIsDeviceready] = useState(false);
 
     useEffect(() => {
         f7ready((f7) => {
@@ -20,6 +21,13 @@ function CordovaApp({ Component, pageProps }) {
         });
     }, []);
 
+    useEffect(() => {
+        if (typeof document == 'undefined') return;
+        document.addEventListener('deviceready', function () {
+            setIsDeviceready(true);
+        });
+    });
+    
     return <>
         <Head>
             <title>My page title</title>
