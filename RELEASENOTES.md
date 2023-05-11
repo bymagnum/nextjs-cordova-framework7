@@ -1,5 +1,9 @@
 # Release Notes
 
+### 0.1.5 
+- Add Release Notes
+- Update package
+
 ### 0.1.3 
 - Added deviceready
 
