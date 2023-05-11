@@ -1,29 +1,29 @@
 # Release Notes
 
 ### 0.1.5 
-- Add Release Notes
-- Update package
+* Add Release Notes
+* Update package
 
 ### 0.1.3 
-- Added deviceready
+* Added deviceready
 
 ### 0.1.1 
-- Public folder added
+* Public folder added
 
 ### 0.0.9 
-- Added a test catalog template
+* Added a test catalog template
 
 ### 0.0.7 
-- Add "create-ncf-app"
+* Add "create-ncf-app"
 
 ### 0.0.4 
-- Minor fixes 
+* Minor fixes 
 
 ### 0.0.3 
-- Add build && export
+* Add build && export
 
 ### 0.0.2 
-- Minor fixes
+* Minor fixes
 
 ### 0.0.1 
-- Create app
+* Create app
