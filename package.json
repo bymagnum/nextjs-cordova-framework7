@@ -3,7 +3,7 @@
   "version": "0.1.5",
   "description": "Launch the cordova app with nextjs and framework7!",
   "bin": {
-    "create-ncf-app": "./dist/bin/create-app"
+    "create-ncf-app": "./bin/create-app"
   },
   "repository": {
     "type": "git",
