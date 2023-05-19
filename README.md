@@ -33,10 +33,14 @@ Command | Description
 `ncf emulate [platform] [option]` | Run the build for the emulator
 `ncf run [platform] [option]` | Run the build for the device
 
+&nbsp;
+
 Platform | Description
 -- | --
 `android` | &#9745;
 `ios` | &#9744; (Work is underway)
+
+&nbsp;
 
 Option | Description
 -- | --
