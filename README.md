@@ -8,7 +8,9 @@ Also, this package has a full extension to use other framework packages without 
 This package uses [next-cordova-static](https://www.npmjs.com/package/next-cordova-static)
 
 You can help the project:
+
 USDT TRC20: THyUxnKfShQ9YkXTEUwNvYZiWgvrR9PCM1
+
 
 # Install 
 ```
