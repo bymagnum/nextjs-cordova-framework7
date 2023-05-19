@@ -3,7 +3,7 @@
     <name>HelloCordova</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">Apache Cordova Team</author>
-    <content src="index.html" />
+    <content src="https://localhost" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -14,8 +14,8 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <preference name="AndroidXEnabled" value="true" />
-		<preference name="android-minSdkVersion" value="22"/> 
-  		<preference name="android-targetSdkVersion" value="30"/>
+		<preference name="android-minSdkVersion" value="22" /> 
+  		<preference name="android-targetSdkVersion" value="30" />
 		<config-file target="AndroidManifest.xml" parent="/manifest" xmlns:android="http://schemas.android.com/apk/res/android">
 		</config-file>
     </platform>

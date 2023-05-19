@@ -1,51 +1,29 @@
 #! /usr/bin/env node
-var shell = require('shelljs');
-var fse = require('fs-extra');
-var path = require('path');
+const fse = require('fs-extra');
+const path = require('path');
+const { shelljsExec } = require('../src/function');
 
 
 async function CreateApp () {
+    try {
 
-    const ROOT_DIR = path.join(path.dirname(__dirname), 'template/');
+        const ROOT_DIR = path.join(path.dirname(__dirname), 'template/');
 
-    if (fse.existsSync(ROOT_DIR + 'components')) {
-        fse.copySync(ROOT_DIR + 'components', 'components');
+        console.log('Copying the template...');
+
+        fse.copySync(ROOT_DIR, '.');
+
+        console.log('The template is copied');
+
+        console.log('Installing npm packages...', );
+
+        await shelljsExec("npm install");
+
+    } catch (error) {
+
+        console.log('Fatal error: ', error);
+
     }
-
-    if (fse.existsSync(ROOT_DIR + 'pages')) {
-        fse.copySync(ROOT_DIR + 'pages', 'pages');
-    }
-
-    if (fse.existsSync(ROOT_DIR + 'public')) {
-        fse.copySync(ROOT_DIR + 'public', 'public');
-    }
-
-    if (fse.existsSync(ROOT_DIR + 'config.xml')) {
-        fse.copySync(ROOT_DIR + 'config.xml', 'config.xml');
-    }
-
-    if (fse.existsSync(ROOT_DIR + 'next.config.js')) {
-        fse.copySync(ROOT_DIR + 'next.config.js', 'next.config.js');
-    }
- 
-    if (fse.existsSync(ROOT_DIR + '.env.development')) {
-        fse.copySync(ROOT_DIR + '.env.development', '.env.development');
-    }
-
-    if (fse.existsSync(ROOT_DIR + '.env.production')) {
-        fse.copySync(ROOT_DIR + '.env.production', '.env.production');
-    }
-
-    if (fse.existsSync(ROOT_DIR + 'package.json')) {
-        fse.copySync(ROOT_DIR + 'package.json', 'package.json');
-    }
-
-    if (fse.existsSync(ROOT_DIR + 'gitignore')) {
-        fse.copySync(ROOT_DIR + 'gitignore', '.gitignore');
-    }
-
-    shell.exec("npm install");
-    
 }
 
 CreateApp();

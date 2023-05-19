@@ -1,4 +1,7 @@
-# Release Notes
+# Change Log
+
+### 1.2.2
+* Big changes
 
 ### 0.1.5 
 * Add Release Notes

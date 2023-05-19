@@ -4,20 +4,19 @@
   "version": "0.0.1",
   "description": "Launch the cordova app with nextjs and framework7!",
   "scripts": {
-    "app-build": "next-cordova-static",
-    "dev": "next dev -p 9090",
-    "start": "next start -p 9091",
-    "build": "next build",
-    "export": "next export"
+    "dev": "ncf dev"
+  },
+  "ncfParams": {
+    "port": 9090
   },
   "dependencies": {
     "cordova": "^11.1.0",
     "framework7": "^8.0.5",
     "framework7-react": "^8.0.5",
     "next": "^13.4.1",
-    "next-cordova-static": "^1.3.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "next-cordova-static": "^1.4.2"
   },
   "cordova": {
     "platforms": []

@@ -2,5 +2,16 @@
 
 module.exports = {
     reactStrictMode: true,
-    poweredByHeader: false,
+    // fix proxy compress gzip false
+    compress: false,
+    async headers() {
+        return [{
+            source: '/:path*',
+            headers: [{
+                // fix proxy Connection: keep-alive
+                key: 'Connection',
+                value: 'keep-alive',
+            }],
+        }]
+    },
 }
