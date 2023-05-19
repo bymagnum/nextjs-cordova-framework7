@@ -61,7 +61,7 @@ module.exports = async function (Args) {
                 // command3 == 'dev'
                 if (command3 == 'dev') {
 
-                    // copy dir 'platforms/android/platform_www/plugins' -> 'public'
+                    // copy dir 'platforms/android/platform_www' -> 'public'
                     if (fse.existsSync(cwd + '/platforms/android/platform_www')) {
 
                         console.log('Copy dir "/platforms/android/platform_www" -> "public"');
@@ -71,17 +71,15 @@ module.exports = async function (Args) {
                     }
 
                     // rename config.xml: <content src="https://localhost" /> -> <content src="http://10.0.2.2:9090/" />
-                    await fse.promises.readFile(cwd + '/config.xml', async function(err, data) {
+                    const getFile1 = await fse.promises.readFile(cwd + '/config.xml');
 
-                        data = data.toString();
-                    
-                        console.log('Setting the ip: 10.0.2.2');
+                    const data11 = getFile1.toString();
 
-                        data = data.replace(/(<content [\S\s]*?src=")[^"]+("[\S\s]*?>)/gmi, '<content src="http://10.0.2.2:' + port + '/" />');
-                    
-                        await fse.promises.writeFile(cwd + '/config.xml', data);
-                    
-                    });
+                    console.log('Setting the ip: 10.0.2.2');
+
+                    const data12 = data11.replace(/(<content [\S\s]*?src=")[^"]+("[\S\s]*?>)/gmi, '<content src="http://10.0.2.2:' + port + '/" />');
+
+                    await fse.promises.writeFile(cwd + '/config.xml', data12);
 
                 }
 
@@ -93,23 +91,16 @@ module.exports = async function (Args) {
 
                 await shelljsExec("npx cordova " + command1 + " android");
 
-                // command3 == 'dev'
-                if (command3 == 'dev') {
+                // rename config.xml: <content src="http://10.0.2.2:9090/" /> -> <content src="https://localhost" />
+                const getFile2 = await fse.promises.readFile(cwd + '/config.xml');
 
-                    // rename config.xml: <content src="http://10.0.2.2:9090/" /> -> <content src="https://localhost" />
-                    await fse.promises.readFile(cwd + '/config.xml', async function(err, data) {
+                const data21 = getFile2.toString();
 
-                        data = data.toString();
+                console.log('Setting the ip: localhost');
 
-                        console.log('Setting the ip: localhost');
-                    
-                        data = data.replace(/(<content [\S\s]*?src=")[^"]+("[\S\s]*?>)/gmi, '<content src="https://localhost" />');
-                    
-                        await fse.promises.writeFile(cwd + '/config.xml', data);
-                    
-                    });
+                const data22 = data21.replace(/(<content [\S\s]*?src=")[^"]+("[\S\s]*?>)/gmi, '<content src="https://localhost" />');
 
-                }
+                await fse.promises.writeFile(cwd + '/config.xml', data22);
 
             } else {
                 console.log('Error: Enter the platform');

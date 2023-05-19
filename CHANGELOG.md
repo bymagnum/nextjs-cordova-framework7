@@ -1,5 +1,8 @@
 # Change Log
 
+### 1.2.3
+* fix minor
+
 ### 1.2.2
 * Big changes
 
