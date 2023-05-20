@@ -1,5 +1,5 @@
 const fse = require('fs-extra');
-const { shelljsExec } = require('./function');
+const { shelljsExec, editConfig } = require('./function');
 
 
 module.exports = async function (Args) {
@@ -15,12 +15,15 @@ module.exports = async function (Args) {
 
         // work catalog
         const cwd = process.cwd();
-
+        
         // package
         const package = require(cwd + '/package.json');
 
         // port
         const port = package?.ncfParams?.port ?? 9090;
+
+        // usesCleartextTraffic
+        const usesCleartextTraffic = package?.ncfParams?.usesCleartextTraffic ?? true;
 
         // dev
         if (command1 == 'dev') {
@@ -71,15 +74,23 @@ module.exports = async function (Args) {
                     }
 
                     // rename config.xml: <content src="https://localhost" /> -> <content src="http://10.0.2.2:9090/" />
-                    const getFile1 = await fse.promises.readFile(cwd + '/config.xml');
+                    await editConfig({
+                        cwd,
+                        action: 'content',
+                        url: 'http://10.0.2.2:' + port,
+                    });
 
-                    const data11 = getFile1.toString();
+                }
 
-                    console.log('Setting the ip: 10.0.2.2');
+                // usesCleartextTraffic
+                if (usesCleartextTraffic) {
 
-                    const data12 = data11.replace(/(<content [\S\s]*?src=")[^"]+("[\S\s]*?>)/gmi, '<content src="http://10.0.2.2:' + port + '/" />');
-
-                    await fse.promises.writeFile(cwd + '/config.xml', data12);
+                    // add usesCleartextTraffic
+                    await editConfig({
+                        cwd,
+                        action: 'usesCleartextTraffic',
+                        method: true,
+                    });
 
                 }
 
@@ -91,16 +102,29 @@ module.exports = async function (Args) {
 
                 await shelljsExec("npx cordova " + command1 + " android");
 
-                // rename config.xml: <content src="http://10.0.2.2:9090/" /> -> <content src="https://localhost" />
-                const getFile2 = await fse.promises.readFile(cwd + '/config.xml');
+                // command3 == 'dev'
+                if (command3 == 'dev') {
 
-                const data21 = getFile2.toString();
+                    // rename config.xml: <content src="http://10.0.2.2:9090/" /> -> <content src="https://localhost" />
+                    await editConfig({
+                        cwd,
+                        action: 'content',
+                        url: 'https://localhost',
+                    });
 
-                console.log('Setting the ip: localhost');
+                }
 
-                const data22 = data21.replace(/(<content [\S\s]*?src=")[^"]+("[\S\s]*?>)/gmi, '<content src="https://localhost" />');
+                // usesCleartextTraffic
+                if (usesCleartextTraffic) {
 
-                await fse.promises.writeFile(cwd + '/config.xml', data22);
+                    // del usesCleartextTraffic
+                    await editConfig({
+                        cwd,
+                        action: 'usesCleartextTraffic',
+                        method: false,
+                    });
+
+                }
 
             } else {
                 console.log('Error: Enter the platform');
