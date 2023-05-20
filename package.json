@@ -11,10 +11,20 @@
     "url": "git+ssh://git@github.com:bymagnum/nextjs-cordova-framework7.git"
   },
   "keywords": [
+    "next",
     "nextjs",
     "framework7",
+    "framework7-react",
+    "framework",
     "cordova",
-    "ecosystem:cordova"
+    "ecosystem:cordova",
+    "mobile",
+    "app",
+    "webapp",
+    "electron",
+    "android",
+    "ios",
+    "pwa"
   ],
   "author": "bymagnum",
   "license": "ISC",
