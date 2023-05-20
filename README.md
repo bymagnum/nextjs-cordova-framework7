@@ -26,7 +26,6 @@ yarn global add nextjs-cordova-framework7
 Parameter | Default | Description
 -- | -- | --
 `ncfParams.port` | 9090 | Development port
-`ncfParams.version` | false | When building a project, the version from package.json is automatically set to config.xml
 `ncfParams.usesCleartextTraffic` | true | For android platform usesCleartextTraffic
 
 # Available commands
