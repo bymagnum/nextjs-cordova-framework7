@@ -1,5 +1,10 @@
 # Change Log
 
+### 1.2.6
+* Added usesCleartextTraffic
+* Update description
+* fix minor
+
 ### 1.2.3
 * fix minor
 
