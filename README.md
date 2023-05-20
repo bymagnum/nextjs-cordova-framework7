@@ -9,7 +9,7 @@ This package uses [next-cordova-static](https://www.npmjs.com/package/next-cordo
 
 You can help the project:
 
-USDT TRC20: THyUxnKfShQ9YkXTEUwNvYZiWgvrR9PCM1
+_USDT TRC20: THyUxnKfShQ9YkXTEUwNvYZiWgvrR9PCM1_
 
 
 # Install 
@@ -23,9 +23,11 @@ or
 yarn global add nextjs-cordova-framework7
 ```
 # Package.json
-Parameter | Default
--- | --
-`ncfParams.port` | 9090
+Parameter | Default | Description
+-- | -- | --
+`ncfParams.port` | 9090 | Development port
+`ncfParams.version` | false | When building a project, the version from package.json is automatically set to config.xml
+`ncfParams.usesCleartextTraffic` | true | For android platform usesCleartextTraffic
 
 # Available commands
 Command | Description
