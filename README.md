@@ -25,14 +25,15 @@ yarn global add nextjs-cordova-framework7
 # Package.json
 Parameter | Default | Description
 -- | -- | --
-`ncfParams.port` | 9090 | Development port
+`ncfParams.port.http` | 9090 | Development port
+`ncfParams.port.https` | 9091 | Development port
 `ncfParams.usesCleartextTraffic` | true | For android platform usesCleartextTraffic
 
 # Available commands
 Command | Description
 -- | --
 `create-ncf-app` | Creates an application of the current directory, ready to work
-`ncf dev` | Start the development server
+`ncf dev` | Runs two development servers, on http and https
 `ncf emulate [platform] [option]` | Run the build for the emulator
 `ncf run [platform] [option]` | Run the build for the device
 
