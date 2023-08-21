@@ -7,7 +7,10 @@
     "dev": "ncf dev"
   },
   "ncfParams": {
-    "port": 9090
+    "port": {
+        "http": 9090,
+        "https": 9091
+    }
   },
   "dependencies": {
     "cordova": "^11.1.0",
