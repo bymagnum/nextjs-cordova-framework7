@@ -3,12 +3,18 @@ const fse = require('fs-extra');
 
 function shelljsExec(command) {
     return new Promise(function (resolve, reject) {
+
         shelljs.exec(command, {}, function (code, value, error) {
+
             if (error) {
+
                 return resolve(error);
+                
             }
+
             resolve(value);
         });
+
     });
 }
 
@@ -21,15 +27,21 @@ function editConfig ({ action, method, cwd, url }) {
         method = method ?? false;
 
         if (!action) {
+
             reject('Action not specified');
+
         }
 
         if (!cwd) {
+
             reject('cwd not specified');
+
         }
 
         if (action == 'content' && !url) {
+
             reject('Url not specified');
+
         }
 
         const getFile = await fse.promises.readFile(cwd + '/config.xml');
@@ -86,5 +98,5 @@ function editConfig ({ action, method, cwd, url }) {
 
 module.exports = {
     shelljsExec,
-    editConfig,
+    editConfig
 }
