@@ -77,7 +77,7 @@ module.exports = async function (Args) {
                     await editConfig({
                         cwd,
                         action: 'content',
-                        url: 'http://10.0.2.2:' + port,
+                        url: 'http://10.0.2.2:' + port
                     });
 
                 }
@@ -89,7 +89,7 @@ module.exports = async function (Args) {
                     await editConfig({
                         cwd,
                         action: 'usesCleartextTraffic',
-                        method: true,
+                        method: true
                     });
 
                 }
@@ -109,7 +109,7 @@ module.exports = async function (Args) {
                     await editConfig({
                         cwd,
                         action: 'content',
-                        url: 'https://localhost',
+                        url: 'https://localhost'
                     });
 
                 }
@@ -121,19 +121,21 @@ module.exports = async function (Args) {
                     await editConfig({
                         cwd,
                         action: 'usesCleartextTraffic',
-                        method: false,
+                        method: false
                     });
 
                 }
 
             } else {
+
                 console.log('Error: Enter the platform');
-                return;
+                
             }
 
         } else {
+
             console.log('Error: Enter the command');
-            return;
+
         }
         
     } catch (error) {
