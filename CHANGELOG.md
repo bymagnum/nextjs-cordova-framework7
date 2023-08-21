@@ -1,5 +1,11 @@
 # Change Log
 
+### 1.2.8
+* Added package local-ssl-proxy
+* HTTPS development
+* Added port indication for http and https
+* Added specifying ports for http and https in ncfParams.port
+
 ### 1.2.6
 * Added usesCleartextTraffic
 * Update description
