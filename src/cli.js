@@ -19,8 +19,11 @@ module.exports = async function (Args) {
         // package
         const package = require(cwd + '/package.json');
 
-        // port
-        const port = package?.ncfParams?.port ?? 9090;
+        // port http
+        const portHttp = package?.ncfParams?.port?.http ?? 9090;
+
+        // port https
+        const portHttps = package?.ncfParams?.port?.https ?? 9091;
 
         // usesCleartextTraffic
         const usesCleartextTraffic = package?.ncfParams?.usesCleartextTraffic ?? true;
@@ -28,8 +31,9 @@ module.exports = async function (Args) {
         // dev
         if (command1 == 'dev') {
 
-            // run
-            await shelljsExec("npx next dev -p " + port);
+            shelljsExec("npx next dev -p " + portHttp);
+
+            shelljsExec("npx local-ssl-proxy --source " + portHttps + " --target " + portHttp);
 
         // emulate or run
         } else if (command1 == 'emulate' || command1 == 'run') {
@@ -77,7 +81,7 @@ module.exports = async function (Args) {
                     await editConfig({
                         cwd,
                         action: 'content',
-                        url: 'http://10.0.2.2:' + port
+                        url: 'https://10.0.2.2:' + portHttps
                     });
 
                 }
