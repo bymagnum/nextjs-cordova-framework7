@@ -29,17 +29,17 @@ module.exports = async function (Args) {
         const usesCleartextTraffic = package?.ncfParams?.usesCleartextTraffic ?? true;
 
         // dev
-        if (command1 == 'dev') {
+        if (['dev'].indexOf(command1) !== -1) {
 
             shelljsExec("npx next dev -p " + portHttp);
 
             shelljsExec("npx local-ssl-proxy --source " + portHttps + " --target " + portHttp);
 
-        // emulate or run
-        } else if (command1 == 'emulate' || command1 == 'run') {
+        // emulate, run
+        } else if (['emulate', 'run'].indexOf(command1) !== -1) {
 
             // android
-            if (command2 == 'android') {
+            if (['android'].indexOf(command2) !== -1) {
 
                 // delete dir 'public/plugins'
                 if (fse.existsSync(cwd + '/public/plugins')) {
@@ -66,7 +66,7 @@ module.exports = async function (Args) {
                 }
 
                 // command3 == 'dev'
-                if (command3 == 'dev') {
+                if (['dev'].indexOf(command3) !== -1) {
 
                     // copy dir 'platforms/android/platform_www' -> 'public'
                     if (fse.existsSync(cwd + '/platforms/android/platform_www')) {
@@ -107,7 +107,7 @@ module.exports = async function (Args) {
                 await shelljsExec("npx cordova " + command1 + " android");
 
                 // command3 == 'dev'
-                if (command3 == 'dev') {
+                if (['dev'].indexOf(command3) !== -1) {
 
                     // rename config.xml: <content src="http://10.0.2.2:9090/" /> -> <content src="https://localhost" />
                     await editConfig({

@@ -18,13 +18,14 @@ function shelljsExec(command) {
     });
 }
 
-function editConfig ({ action, method, cwd, url }) {
+function editConfig ({ action, method, cwd, url, ar }) {
     return new Promise(async function (resolve, reject) {
 
         action = action ?? null;
         url = url ?? null;
         cwd = cwd ?? null;
         method = method ?? false;
+        ar = ar ?? null;
 
         if (!action) {
 
@@ -52,10 +53,9 @@ function editConfig ({ action, method, cwd, url }) {
             
             console.log('Setting the url: ' + url);
 
-            data = data.replace(/(<content [\S\s]*?src=")[^"]+("[\S\s]*?>)/gmi, '<content src="' + url + '" />');
+            data = data.replace(/<content [\S\s]*?src="[^"]+"/gmi, '<content src="' + url + '"');
 
         } else if (action == 'usesCleartextTraffic') {
-
 
             if (method) {
 
