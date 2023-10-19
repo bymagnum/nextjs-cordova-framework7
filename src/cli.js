@@ -37,10 +37,10 @@ module.exports = async function (Args) {
 
         // emulate, run
         } else if (['emulate', 'run'].indexOf(command1) !== -1) {
-
+console.log('command1', command1);
             // android
             if (['android'].indexOf(command2) !== -1) {
-
+console.log('command2', command2);
                 // delete dir 'public/plugins'
                 if (fse.existsSync(cwd + '/public/plugins')) {
 
@@ -98,9 +98,14 @@ module.exports = async function (Args) {
 
                 }
 
-                console.log('Run next-cordova-static');
+                // command3 == 'dev'
+                if (['dev'].indexOf(command3) === -1) {
 
-                await shelljsExec("npx next-cordova-static");
+                    console.log('Run next-cordova-static');
+
+                    await shelljsExec("npx next-cordova-static");
+
+                }
 
                 console.log('Run cordova ' + command1 + ' android');
 
