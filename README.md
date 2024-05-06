@@ -9,7 +9,7 @@ This package uses [next-cordova-static](https://www.npmjs.com/package/next-cordo
 
 You can help the project:
 
-_USDT TRC20: THyUxnKfShQ9YkXTEUwNvYZiWgvrR9PCM1_
+_USDT TRC20: TRTLj2wMtMtGRjGq96qxozf9MXK577PNTD_
 
 
 # Install 
